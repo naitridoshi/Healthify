@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Heart Diseases</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Enter Heart Diseases Data</h2>
+          </div>
+
+        <form action="{% url 'heartDiseasesResult' %}" method="post" role="form" data-aos="fade-up" data-aos-delay="100">
+            {% csrf_token %}
+            <div class="from-row">
+                <div class="form-group col-md-7 ">
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="gender">
+                            Select Gender :
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="sex" value="male" checked>
+                        <label id="radio1" class="form-check-label" for="gender">
+                            Male
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="sex" value="female">
+                        <label id="radio1" class="form-check-label" for="gender">
+                            Female
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" class="form-control" placeholder="Enter Your Age">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="chest_pain_type">Chest Pain Type(0-4):</label>
+                    <input type="number" name="chest_pain_type" class="form-control" placeholder="Enter Your Chest Pain Type(0-4)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="resting_blood_pressure">Resting Blood Pressure:</label>
+                    <input type="number" name="resting_blood_pressure" class="form-control" placeholder="Enter Your Resting Blood Pressure">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="serum_cholestrol">Serum Cholestoral In mg/dl:</label>
+                    <input type="number" name="serum_cholestrol" class="form-control" placeholder="Enter Your Serum Cholestoral In mg/dl">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fasting_blood_sugar">Fasting Blood Sugar:</label>
+                    <input type="number" name="fasting_blood_sugar" class="form-control" placeholder="Enter Your Fasting Blood Sugar">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="resting_electrocardiographic_results">Resting Electrocardiographic Results(0,1,2):</label>
+                    <input type="number" name="resting_electrocardiographic_results" class="form-control" placeholder="Enter Your Resting Electrocardiographic Results(0,1,2)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="maximum_heart_rate_achieved">Maximum Heart Rate Achieved:</label>
+                    <input type="number" name="maximum_heart_rate_achieved" class="form-control" placeholder="Enter Your Maximum Heart Rate Achieved">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exercise_induced_angina">Exercise Induced Angina:</label>
+                    <input type="number" name="exercise_induced_angina" class="form-control" placeholder="Enter Your Exercise Induced Angina">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="oldpeak">Oldpeek:</label>
+                    <input type="number" name="oldpeak" class="form-control" placeholder="Enter Your Oldpeek">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="slope_of_the_peak_exercise_ST_segment">Slopeof the peak exercise ST Segment:</label>
+                    <input type="number" step="any" name="slope_of_the_peak_exercise_ST_segment" class="form-control" placeholder="Enter Your slope_of_the_peak_exercise_ST_segment">
+                </div>
+                <!-- <div class="form-group col-md-6">
+                    <label for="number_of_major_vessels_colored_by_flourosopy">Slopeof the peak exercise ST Segment:</label>
+                    <input type="number" name="number_of_major_vessels_colored_by_flourosopy" class="form-control" placeholder="Enter the Number Of Major Vessels Colored By Flourosopy(0-3)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="thal">Enter The Thal(3=normal; 6=fixed defect; 7=reversable defect):</label>
+                    <input type="number" name="thal" class="form-control" placeholder="Enter The Thal(3=normal; 6=fixed defect; 7=reversable defect)">
+                </div> -->
+            </div>
+            <button type="submit">Submit</button>
+            <!-- <div class="text-center"><button type="submit">Make an Appointment</button></div> -->
+        </form>
+
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

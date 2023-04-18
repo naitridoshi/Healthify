@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Parkinsons Result</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                  <h2>Parkinsons Report</h2>
+            </div>
+            <div class="container">
+                  {% if result == "risk" %}
+                  <p><h4><strong>Prevention is better than cure.</strong></h4></p>
+                        <p><strong><h5>Doctors to consult:</h5></strong> Neurologist</p><br>
+                        <p><strong>
+                              <h5>
+                                    Diet recommended:
+                              </h5>
+                              </strong><br>
+                              <ul>
+                                    <li><strong>Antioxidants</strong></li>
+                                    <li><strong>Nuts</strong>, such as walnuts, Brazil nuts, pecans, and pistachios</li> 
+                                    <li><strong>Berries</strong>, such as blueberries, blackberries, goji berries, cranberries, and elderberries</li>
+                                    <li> <strong>Nightshade vegetables</strong>, such as tomatoes, peppers, and eggplant</li>
+                                    <li> <strong>Leafy green vegetables</strong>, such as spinach and kale</li>
+                              </ul>
+                        </p>
+                        <br>
+                        <p><strong><h5>Food to avoid:</h5></strong><br>
+                              <ul>
+                                    <li><strong>food high in saturated fats</strong>, such as beef lard,butter,cheese,palm oil</li>
+                                    <li><strong>Processed food</strong>, such as such as canned foods,fried foods, and regular and diet sodas</li>
+                                    <li><strong>Foods that are hard to chew</strong>, such as white rice, tortillas, breads and pasta - especially those made with white flour</li>
+                                    <li><strong>Starchy vegetables</strong>, Choosing foods that are easy to chew and swallow may be important, as may working with a speech language therapist.</li>
+                              </ul>
+                        </p>
+                        <p><strong><h5>Lifestyle to maintain:</h5></strong><br>
+                              <ol>
+                                    <li><strong>Drink plenty of water.</strong>:Staying hydrated is especially important for people with Parkinsons, who often dont experience typical thirst sensations. Aim to drink 6-8 full glasses (1.2-1.6 liters) of water each day to feel your best .</li>
+                                    <li><strong>Spend time outside.</strong>:Vitamin D has been demonstrated to protect against Parkinsons, so getting fresh air and sunshine may ease your symptoms</li>
+                                    <li><strong>Get moving.</strong>:Various kinds of exercise and physical therapy may improve your abilities and slow the progression of Parkinsons</li>
+                                    <li><strong> Stay mentally active</strong>: Engaging in mentally stimulating activities, such as reading,playing games, and learning new skills, has been shown to help maintain cognitive function and reduce the risk of Parkinsons disease.</li>
+                                    <li><strong>Stop smoking</strong>:Diabetes makes you more likely to have health problems like heart disease, eye disease, stroke, kidney disease, blood vessel disease, nerve damage, and foot problems.</li>
+                                    <li><strong> Maintain social connections</strong>: Maintaining strong social connections can help reduce the risk of Parkinsons disease. Social isolation has been linked to an increased risk of cognitive decline and other health problems</li>
+                        </ol>
+                        </p>
+                        <div class="text-center">
+                        <p><strong><h5>!! Keep in mind that certain foods and supplements may interfere with prescription drugs for this disease, so make sure you consult your doctor before changing your treatment routine. !!</h5></strong></p>
+                        </div>
+                  {% else %}
+                        <h4>Chill !! No Risk </h4>
+                  {% endif %}
+            </div>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

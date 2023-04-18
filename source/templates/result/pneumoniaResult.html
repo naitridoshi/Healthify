@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pneumonia Result</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                  <h2>Pneumonia Report</h2>
+            </div>
+            <div class="container">
+                  {% if result == "risk" %}
+                  <p><h4><strong>Prevention is better than cure.</strong></h4></p>
+                        <p><strong><h5>Doctors to consult:</h5></strong> Pulmonologist</p><br>
+                        <p><strong>
+                              <h5>
+                                    Diet recommended:
+                              </h5>
+                              </strong><br>
+                              <ul>
+                                    <li><strong>Foods rich in vitamin C</strong>- Vitamin C, a great antioxidant for the body, is abundant in oranges.
+                                        Additionally, vitamin C strengthens the immune system.</li>
+                                    <li><strong>Cruciferous vegetables</strong>- Cruciferous vegetables more popularly known as green leafy vegetables
+                                        are incredibly nutrient-dense and aid in the recovery of this respiratory infection.</li> 
+                                    <li><strong>Whole grains</strong>- Be sure to eat a lot of carbohydrates. Foods like quinoa, brown rice, and oats are
+                                        a great addition to the diet.</li>
+                                    <li> <strong>Protein-rich foods</strong>- Nuts, peanuts, beans, white meat, and cold water fish are examples of foods
+                                        high in protein</li>
+                                    <li><strong>Yogurt</strong>- It is well known that yogurt contains healthy bacteria that are advantageous to the body.</li>
+                                    </ul>
+                        </p>
+                        <br>
+                        <p><strong><h5>Food to avoid:</h5></strong><br>
+                              <ul>
+                                    <li><strong>Processed Meats -</strong>- According to studies, the nitrites used in the production and preservation of
+                                        processed meats may cause inflammation and stress in the lungs.</li>
+                                    <li><strong>Alcohol</strong>- Alcohol contains sulphites, which can exacerbate the symptoms of pneumonia. Also,
+                                        ethanol commonly found in beer, wine, and liquor affects lung cells.</li>
+                                    <li><strong>Sugary Drinks</strong>- According to a study, adults who consume sweetened soft drinks more than 5
+                                        times a week are twice likely to have chronic bronchitis. While children are more likely to have
+                                        asthma. Both chronic bronchitis and asthma can worsen your pneumonia symptoms.</li>
+                                    <li><strong>Foods High in Sodium</strong>- Consuming too much table salt or salty packaged foods can aggravate
+                                        the symptoms of pneumonia like shortness of breath.</li>
+                              </ul>
+                        </p>
+                        <p><strong><h5>Lifestyle to maintain:</h5></strong><br>
+                              <ol>
+                                    <li><strong>Practice good hygiene</strong>: Wash your hands regularly before and after having meals and protect
+                                        yourself against respiratory infections.</li>
+                                    <li><strong>Quit smoking and adopt healthy habits</strong>: Smoking can damage your lungs natural defences
+                                        against respiratory infections.</li>
+                                    <li><strong>Exercise regularly</strong>: to keep your immune system strong. Practising yoga and deep breathing
+                                        exercises to keep your lungs healthy.</li>
+                                    <li><strong>Get 7-8 hours of sleep</strong>: regularly and adequate rest.</li>
+                                    <li><strong>Consume a balanced diet</strong>: rich in fruits and vegetables, whole grains, proteins, and nutrients,
+                                        and drink lots of fluid.</li>
+                              </ol>
+                        </p>
+                        
+
+                  {% else %}
+                        <h4>Chill !! No Risk </h4>
+                  {% endif %}
+            </div>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

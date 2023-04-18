@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Breast Cancer</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Enter Breast Cancer Data</h2>
+        </div>
+
+        <form action="{% url 'parkinsonsResult' %}" method="post" role="form" data-aos="fade-up" data-aos-delay="100">
+            {% csrf_token %}
+            <div class="from-row">
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_fo_hz">Average Vocal Fundamental Frequency:</label>
+                    <input type="number" name="mdvp_fo_hz" class="form-control" id="mdvp_fo_hz" placeholder="Enter Your Average Vocal Fundamental Frequency">
+                </div>
+                
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_fhi_hz">Maximum Vocal Fundamental Frequency:</label>
+                    <input type="number" name="mdvp_fhi_hz" class="form-control" id="mdvp_fhi_hz" placeholder="Enter Maximum Vocal Fundamental Frequency">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_flo_hz">Minimum Vocal Fundamental Frequency:</label>
+                    <input type="number" step="any" name="mdvp_flo_hz" class="form-control" placeholder="Enter Minimum Vocal Fundamental Frequency">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_jitter_percent">Variation In Fundamental Frequency(%):</label>
+                    <input type="number" step="any" name="mdvp_jitter_percent" class="form-control" placeholder="Enter Variation In Fundamental Frequency(%)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_jitter_abs">Variation In Fundamental Frequency(abs):</label>
+                    <input type="number" step="any" name="mdvp_jitter_abs" class="form-control" placeholder="Variation In Fundamental Frequency(abs)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_rap">Variation In Fundamental Frequency(RAP):</label>
+                    <input type="number" step="any" name="mdvp_rap" class="form-control" placeholder="Enter Variation In Fundamental Frequency(RAP)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_jitter_ppq">Variation In Fundamental Frequency(PPQ):</label>
+                    <input type="number" step="any" name="mdvp_jitter_ppq" class="form-control" placeholder="Enter Variation In Fundamental Frequency(PPQ)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="jitter_ddp">Variation In Fundamental Frequency(DDP):</label>
+                    <input type="number" step="any" name="jitter_ddp" class="form-control" placeholder="Enter Variation In Fundamental Frequency(DDP)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_shimmer">Variation In Amplitude:</label>
+                    <input type="number" step="any" name="mdvp_shimmer" class="form-control" placeholder="Enter Variation In Amplitude">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_shimmer_db">Variation In Amplitude(dB):</label>
+                    <input type="number" step="any" name="mdvp_shimmer_db" class="form-control" placeholder="Enter Variation In Amplitude(dB)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="shimmer_apq3">Variation In Amplitude(APQ3):</label>
+                    <input type="number" step="any" name="shimmer_apq3" class="form-control" placeholder="Enter Variation In Amplitude(APQ3)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_shimmer_apq5">Variation In Amplitude(APQ5):</label>
+                    <input type="number" step="any" name="mdvp_shimmer_apq5" class="form-control" placeholder="Enter Variation In Amplitude(APQ5)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="mdvp_apq">Variation In Amplitude(APQ):</label>
+                    <input type="number" step="any" name="mdvp_apq" class="form-control" placeholder="Enter Variation In Amplitude(APQ)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="shimmer_dda">Variation In Amplitude(DDA):</label>
+                    <input type="number" step="any" name="shimmer_dda" class="form-control" placeholder="Enter Variation In Amplitude(DDA)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="nhr">Measure Of Ratio Of Noise To Tonal component In The Voice(NHR):</label>
+                    <input type="number" step="any" name="nhr" class="form-control" placeholder="Enter Measure Of Ratio Of Noise To Tonal component In The Voice(NHR)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="hnr">Measure Of Ratio Of Noise To Tonal component In The Voice(HNR):</label>
+                    <input type="number" step="any" name="hnr" class="form-control" placeholder="Enter Measure Of Ratio Of Noise To Tonal component In The Voice(HNR)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="rpde">Nonlinear Dynamical Complexity Measure(RPDE):</label>
+                    <input type="number" step="any" name="rpde" class="form-control" placeholder="Enter Nonlinear Dynamical Complexity Measure(RPDE)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="d2">Nonlinear Dynamical Complexity Measure(D2):</label>
+                    <input type="number" step="any" name="d2" class="form-control" placeholder="Enter Nonlinear Dynamical Complexity Measure(D2)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="dfa">Signal Fractal Scaling Exponent:</label>
+                    <input type="number" step="any" name="dfa" class="form-control" placeholder="Enter Signal Fractal Scaling Exponent">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="spread1">Nonlinear Measure Of Fundamental Frequency Variation(Spread1):</label>
+                    <input type="number" step="any" name="spread1" class="form-control" placeholder="Enter Nonlinear Measure Of Fundamental Frequency Variation(Spread1)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="spread2">Nonlinear Measure Of Fundamental Frequency Variation(Spread2):</label>
+                    <input type="number" step="any" name="spread2" class="form-control" placeholder="Enter Nonlinear Measure Of Fundamental Frequency Variation(Spread2)">
+                </div>
+                <div class="form-group col-md-auto">
+                    <label for="ppe">Nonlinear Measure Of Fundamental Frequency Variation(PPE):</label>
+                    <input type="number" step="any" name="ppe" class="form-control" placeholder="Enter Nonlinear Measure Of Fundamental Frequency Variation(PPE)">
+                </div>
+                
+                
+            </div>
+            <div class="text-center">
+            <button type="submit">Submit</button>
+            </div>
+            <!-- <div class="text-center"><button type="submit">Make an Appointment</button></div> -->
+        </form>
+
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

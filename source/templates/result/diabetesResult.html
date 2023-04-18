@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Diabetes Result</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                  <h2>Diabetes Report</h2>
+            </div>
+            <div class="container">
+                  {% if result == "risk" %}
+                  <p><h4><strong>Prevention is better than cure.</strong></h4></p>
+                        <p><strong><h5>Doctors to consult:</h5></strong> Endocrinologist</p><br>
+                        <p><strong>
+                              <h5>
+                                    Diet recommended:
+                              </h5>
+                              </strong><br>
+                              <ul>
+                                    <li><strong>Fruits and vegetables</strong></li>
+                                    <li><strong>Whole grains</strong>, such as whole wheat, brown rice, barley, quinoa, and oats</li> 
+                                    <li><strong>Proteins</strong>, such as lean meats, chicken, turkey, fish, eggs, nuts, beans, lentils and tofu</li>
+                                    <li> <strong>Nonfat or low-fat dairy</strong>, such as milk, yogurt, and cheese</li>
+                              </ul>
+                        </p>
+                        <br>
+                        <p><strong><h5>Food to avoid:</h5></strong><br>
+                              <ul>
+                                    <li><strong>Sugary foods</strong>, such as candy, cookies, cake, ice cream, sweetened cereals,and canned fruits with added sugar</li>
+                                    <li><strong>Drinks with added sugars</strong>, such as juice, regular soda, and regular sports or energy drinks</li>
+                                    <li><strong>White flour</strong>, such as white rice, tortillas, breads and pasta - especially those made with white flour</li>
+                                    <li><strong>Starchy vegetables</strong>, such as white potatoes, corn, and peas</li>
+                              </ul>
+                        </p>
+                        <p><strong><h5>Lifestyle to maintain:</h5></strong><br>
+                              <ol>
+                                    <li><strong>Eat healthy</strong>:This is crucial when you have diabetes, because what you eat affects your blood sugar. No foods are strictly off-limits.</li>
+                                    <li><strong>Exercise</strong>:If you're not active now, its time to start. You don't have to join a gym and do cross-training. Just walk, ride a bike, or play active video games.</li>
+                                    <li><strong>Get checkups</strong>:See your doctor at least twice a year</li>
+                                    <li><strong>Manage stress</strong>: When you're stressed, your blood sugar levels go up so do deep breathing, yoga, or hobbies that relax you.</li>
+                                    <li><strong>Stop smoking</strong>:Diabetes makes you more likely to have health problems like heart disease, eye disease, stroke, kidney disease, blood vessel disease, nerve damage, and foot problems.</li>
+                              </ol>
+                        </p>
+                        
+                        <div>
+                              <img src={% static 'pneumonia1.jpg'%} alt="" srcset="">
+                        </div>
+
+                  {% else %}
+                        <h4>Chill !! No Risk </h4>
+                  {% endif %}
+            </div>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

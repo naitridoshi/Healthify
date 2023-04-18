@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Heart Disease Result</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                  <h2>Heart Disease Report</h2>
+            </div>
+            <div class="container">
+                  {% if result == "risk" %}
+                  <p><h4><strong>Prevention is better than cure.</strong></h4></p>
+                        <p><strong><h5>Doctors to consult:</h5></strong> Cardiologist</p><br>
+                        <p><strong>
+                              <h5>
+                                    Diet recommended:
+                              </h5>
+                              </strong><br>
+                              <ul>
+                                    <li><strong>Meats and other proteins</strong>Seafood, Poultry, Lean meats, Beans, Peas</li>
+                                    <li><strong>Whole grains</strong>Whole grain bread, bagels, English muffins, and tortillas</li> 
+                                    <li><strong>Vegetables and fruits</strong>, such as Frozen vegetables without added butter or sauces</li>
+                                    <li> <strong>Dairy</strong>like Fat-free or low-fat plain yogurt, Fat-free or low-fat cheeses or cottage cheese</li>
+                                    <li><strong>Meats and other proteins</strong>Water (plain or flavored with fruit slices), Sparkling water, Coffee, Tea</li>
+                                    <li><strong>Unsaturated vegetables</strong> Avocados, Low-fat or Light mayonnaise</li>
+                                </ul>
+                        </p>
+                        <br>
+                        <p><strong><h5>Food to avoid:</h5></strong><br>
+                              <ul>
+                                    <li><strong>Grains</strong>Baked goods like cakes, cookies, muffins, scones, biscuits, croissants, cobblers, doughnuts, pastries and pies</li>
+                                    <li><strong>Meats and other protein</strong>High-fat cuts of beef, processed meats like hot dogs, sausage, salami, lunch meat, bacon</li>
+                                    <li><strong>Vegetable and fruits</strong>Vegetables prepared with butter, cheese or creamy sauces</li>
+                                    <li><strong>Dairy</strong>Cream cheese, whole or 2% milk, whole milk yogurt</li>
+                                    <li><strong>Fats and Oils</strong>Butter, Stick margarine, Shortening, Tropical oils</li>
+                                    <li><strong>Beverages</strong>Drinks with added sugar, Alcohol</li>
+                              </ul>
+                        </p>
+                        <p><strong><h5>Lifestyle to maintain:</h5></strong><br>
+                              <ol>
+                                    <li><strong>Don't smoke or use tobacco</strong>: One of the best things you can do for your heart isto stop smoking
+                                        or using smokeless tobacco. Even if you're not a smoker, be sure to avoid secondhand smoke.</li>
+                                    <li><strong>Get moving</strong>:Aim for at least 30 to 60 minutes of activity daily. Regular, daily physical activity can
+                                        lower the risk of heart disease. Physical activity helps control your weight.</li>
+                                    <li><strong>Eat a heart - healthy diet</strong>: A healthy diet can help protect the heart, improve blood pressure and
+                                        cholesterol, and reduce the risk of type 2 diabetes.</li>
+                                    <li><strong>Maintain a healthy weight</strong>: Being overweight, especially around the middle of the body increases
+                                        the risk of heart disease. Excess weight can lead to conditions that increase the chances of
+                                        developing heart disease including high blood pressure, high cholesterol and type 2 diabetes.</li>
+                                    <li><strong>Get good quality sleep</strong>: People who don't get enough sleep have a higher risk of obesity, high
+                                        blood pressure, heart attack, diabetes and depression.</li>
+                                    <li><strong>Manage stress</strong>: Some people cope with stress in unhealthy ways such as overeating, drinking or
+                                        smoking. Finding alternative ways to manage stress such as physical activity, relaxation exercises
+                                        or meditation can help improve your health.</li> 
+                                    </ol>
+                        </p>
+                        
+
+                  {% else %}
+                        <h4>Chill !! No Risk </h4>
+                  {% endif %}
+            </div>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

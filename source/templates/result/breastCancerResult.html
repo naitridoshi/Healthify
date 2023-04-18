@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Diabetes Result</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                  <h2>Breast Cancer Report</h2>
+            </div>
+            <div class="container">
+                  {% if result == "risk" %}
+                  <p><h4><strong>Prevention is better than cure.</strong></h4></p>
+                        <p><strong><h5>Doctors to consult:</h5></strong> 
+                            <ul>
+                                <li><strong>Medical oncologist:</strong> A doctor who specializes in the medical treatment of cancer.</li>
+                                <li><strong>Surgical oncologist:</strong> A doctor who specializes in the surgical treatment of cancer.</li>
+                                <li><strong>Breast surgeon:</strong>Also a surgical oncologist, this is a doctor who specializes in the surgical removal of breast tumors and lymph nodes while saving as much of the breast as possible.</li>
+                            </ul></p><br>
+                        <p><strong>
+                              <h5>
+                                    Diet recommended:
+                              </h5>
+                              </strong><br>
+                              <ul>
+                                    <li><strong>Leafy green vegetables and Cruciferous vegetables</strong></li>
+                                    <li><strong> Allium vegetables</strong>, such as Garlic, Onions and leek</li> 
+                                    <li><strong>Citrus food</strong>, such as oranges, grapefruits, lemons, limes, tangerines,etc.</li>
+                              </ul>
+                        </p>
+                        <br>
+                        <p><strong><h5>Food to avoid:</h5></strong><br>
+                              <ul>
+                                    <li><strong>Alcohol:</strong>Alcohol use, especially heavy drinking, may significantly incease your risk of breast cancer.</li>
+                                    <li><strong>Fast Food:</strong>Eating fast food regularly has many downsides, including an increased risk of heart disease, diabetes, obesity, and breast cancer.</li>
+                                    <li><strong>Fried foods:</strong> Research shows that a diet high in fried foods may significantly increase your risk of breast cancer. Indeed, in a study involving 620 Iranian women under 50 years old, fried food intake was the largest risk factor for breast cancer development. </li>
+                                    <li><strong>Processed meats:</strong>Processed meats like bacon and sausage may raise your risk of breast cancer. A 2018 literature review of 18 studies linked highly processed meat intake to a 9% greater breast cancer risk. </li>
+                                    <li><strong>Added sugar:</strong>A diet high in added sugar may significantly raise your risk of breast cancer by increasing inflammation and the expression of certain enzymes related to cancer growth and spread. </li>
+                                    <li><strong>Refined carbs:</strong>Diets high in refined carbs, including the typical Western diet, may increase breast cancer risk. Try replacing refined carbs like white bread and sugary baked goods with whole grain products and nutrient-dense veggies</li>
+                              </ul>
+                        </p>
+                        <p><strong><h5>Lifestyle tips for people with Breast Cancer:</h5></strong><br>
+                                <ol>
+                                    <li><strong>Exercise</strong>: Exercise helps to promote and maintain an individuals overall physical and mental health.</li>
+                                    <li><strong>Weight and diet</strong>:The association between an individuals weight and breast cancer risk is a complex one. It is recommended to maintain a healthy weight and eat fresh, nutritious food, throughout your life</li>
+                                    <li><strong>Alcohol and tobacco</strong>:Alcohol metabolism and consumption of alcohol are clearly linked to an increased risk of breast cancer.</li>
+                                    <li><strong>Children</strong>: Pregnancy at an early age before 30 with delivery on the due date is considered as a protective measure against breast cancer. Women who have not had children or who had their first child after age 30 have a slightly higher breast cancer risk overall</li>
+                                    <li><strong>Breastfeeding</strong>:Most studies suggest that a cumulative period of more than 2 years, may slightly lower breast cancer risk. Each year of breastfeeding reduces the risk of cancer by 4.3%. </li>
+                                    <li><strong>Use of birth control</strong>:The use of OCP after the age of 30 and for less than 5 years might not increase the risk of breast cancer. </li>
+                                    <li><strong>Hormone replacement therapy(HRT) after menopause</strong>:The use of hormone replacement therapy to relieve the symptoms of menopause has been implicated in breast cancer.</li>
+                                    <li><strong>Chemicals in the environment</strong>:Exposure to certain chemicals may increase the risk of breast cancer. Women are exposed to various types of chemicals in everyday life like furniture items, food packaging plastics, building materials, air pollutants etc </li>
+                                </ol>
+                        </p>
+                  {% else %}
+                        <h4>Chill !! No Risk </h4>
+                  {% endif %}
+            </div>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>

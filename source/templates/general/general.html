@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Genaral Questions</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href={% static 'assets/img/favicon.png' %} rel="icon">
+    <link href={% static 'assets/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+    <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+    <style>
+        #radio{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        #radio1{
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Template Main CSS File -->
+    <link href={% static 'assets/css/style.css' %} rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Main section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Answer General Questions</h2>
+          </div>
+
+        <form action="{% url 'recommendedPage' %}" method="post" role="form"  data-aos="fade-up" data-aos-delay="100">
+            {% csrf_token %}
+            <div class="from-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Enter Your Name:</label>
+                    <input type="text" name="name" class="form-control"  placeholder="Enter Your Name ">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Enter Your Age:</label>
+                    <input type="number" name="age" class="form-control"  placeholder="Enter Your Age ">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Weight">Enter your weight:</label>
+                    <input type="number" step="any" name="weight" class="form-control"  placeholder="Enter Your Weight ">
+                </div>
+                <div class="form-check" id="radio">
+                    <label class="form-check-label" for="gender">
+                        Select Gender :
+                    </label>
+                    <input id="radio1" class="form-check" type="radio" name="gender" value="male" checked>
+                    <label id="radio1" class="form-check-label" for="gender">
+                        Male
+                    </label>
+                    <input id="radio1" class="form-check" type="radio" name="gender" value="female">
+                    <label id="radio1" class="form-check-label" for="gender">
+                        Female
+                    </label>
+                </div>
+                <div class="form-group col-md-7 ">
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="breast_b1">
+                            Did you notice a new lump in the breast or underarm?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b1" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="breast_b1">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b1" value="0">
+                        <label id="radio1" class="form-check-label" for="breast_b1">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="breast_b2">
+                            Did you feel irritation or dimpling of breast?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b2" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="breast_b2">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b2" value="0">
+                        <label id="radio1" class="form-check-label" for="breast_b2">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="breast_b3">
+                            Did you notice redness or flakyness on your breast?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b3" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="breast_b3">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="breast_b3" value="0">
+                        <label id="radio1" class="form-check-label" for="breast_b3">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="parkinsons_p1">
+                            Are your hands trembling?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p1" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="parkinsons_p1">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p1" value="0">
+                        <label id="radio1" class="form-check-label" for="parkinsons_p1">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="parkinsons_p2">
+                            Have your muscles been stiffed for a long time?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p2" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="parkinsons_p2">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p2" value="0">
+                        <label id="radio1" class="form-check-label" for="parkinsons_p2">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="parkinsons_p3">
+                            Do you find impaired balance and coordination?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p3" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="parkinsons_p3">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="parkinsons_p3" value="0">
+                        <label id="radio1" class="form-check-label" for="parkinsons_p3">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="diabetes_d1">
+                            Do you have blurry vision?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d1" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="diabetes_d1">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d1" value="0">
+                        <label id="radio1" class="form-check-label" for="diabetes_d1">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="diabetes_d2">
+                            Did you loose weight without trying?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d2" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="diabetes_d2">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d2" value="0">
+                        <label id="radio1" class="form-check-label" for="diabetes_d2">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="diabetes_d3">
+                            Do you have very dry skin?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d3" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="diabetes_d3">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="diabetes_d3" value="0">
+                        <label id="radio1" class="form-check-label" for="diabetes_d3">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="pneumonia_pn1">
+                            Do you have shortness of breath?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn1" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn1">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn1" value="0">
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn1">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="pneumonia_pn2">
+                            Do you have nausea or vomitimg?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn2" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn2">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn2" value="0">
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn2">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="pneumonia_pn3">
+                            Do you have fever or sweating?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn3" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn3">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="pneumonia_pn3" value="0">
+                        <label id="radio1" class="form-check-label" for="pneumonia_pn3">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="heart_h1">
+                            Are you having chest Pain?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h1" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="heart_h1">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h1" value="0">
+                        <label id="radio1" class="form-check-label" for="heart_h1">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="heart_h2">
+                            Do you have Irregular Heartbeats?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h2" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="heart_h2">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h2" value="0">
+                        <label id="radio1" class="form-check-label" for="heart_h2">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check" id="radio">
+                        <label class="form-check-label" for="heart_h3">
+                            Do you have pain in the Neck or Throat?
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h3" value="1" checked>
+                        <label id="radio1" class="form-check-label" for="heart_h3">
+                            Yes
+                        </label>
+                        <input id="radio1" class="form-check" type="radio" name="heart_h3" value="0">
+                        <label id="radio1" class="form-check-label" for="heart_h3">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+            <!-- <div class="text-center"><button type="submit">Make an Appointment</button></div> -->
+        </form>
+
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+    <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <!-- <script src={% static 'assets/vendor/php-email-form/validate.js' %}></script> -->
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+</body>
+</html>
