@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../django/healthchecker"
+		},
+		{
+			"path": "../django/dummy"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "Healthfyme"
+	}
+}
