@@ -1,5 +1,4 @@
 setuptools
-build-essential
 absl-py==1.2.0
 aiohttp==3.8.4
 aiosignal==1.3.1
