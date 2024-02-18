@@ -21,7 +21,7 @@ Model Training: Different machine learning models are trained on the processed d
 Prediction: Users input their medical data through the web interface, and the trained models generate predictions for the likelihood of each disease.
 Result Presentation: Healthify presents the predictions in a clear and understandable format, along with any necessary explanations or recommendations.
 
-#Get Started
+# Get Started
 To run Healthify locally and explore its functionalities, follow these steps:
 
 Clone the repository to your local machine.
