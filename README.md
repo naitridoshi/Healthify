@@ -15,16 +15,16 @@ User-Friendly Interface: Healthify offers a user-friendly web interface built wi
 # How It Works
 Healthify employs a multi-step process to predict diseases:
 
-Data Collection: Relevant medical data, such as patient demographics, symptoms, and diagnostic tests, are collected and preprocessed.
-Feature Engineering: Features are extracted and engineered from the collected data to represent various aspects of each disease.
-Model Training: Different machine learning models are trained on the processed data to learn patterns and relationships between features and disease outcomes.
-Prediction: Users input their medical data through the web interface, and the trained models generate predictions for the likelihood of each disease.
-Result Presentation: Healthify presents the predictions in a clear and understandable format, along with any necessary explanations or recommendations.
+[] Data Collection: Relevant medical data, such as patient demographics, symptoms, and diagnostic tests, are collected and preprocessed.
+[] Feature Engineering: Features are extracted and engineered from the collected data to represent various aspects of each disease.
+[] Model Training: Different machine learning models are trained on the processed data to learn patterns and relationships between features and disease outcomes.
+[] Prediction: Users input their medical data through the web interface, and the trained models generate predictions for the likelihood of each disease.
+[] Result Presentation: Healthify presents the predictions in a clear and understandable format, along with any necessary explanations or recommendations.
 
 # Get Started
 To run Healthify locally and explore its functionalities, follow these steps:
 
-Clone the repository to your local machine.
-Navigate to the project directory and run the Django development server.
-Access the web application through your preferred web browser.
-Input your medical data and obtain predictions for the selected diseases
+[] Clone the repository to your local machine.
+[] Navigate to the project directory and run the Django development server.
+[] Access the web application through your preferred web browser.
+[] Input your medical data and obtain predictions for the selected diseases
