@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    return render(request, 'temps/index.html')
+    return render(request, 'index.html')
 
 def parkinsonsPage(request):
     return render(request , "diseases/parkinsons.html")

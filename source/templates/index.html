@@ -1,25 +1,358 @@
-  {% load static %}
-
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Health Cognizant</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/logo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={% static 'assets/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet">
+  <link href={% static 'assets/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+  <link href={% static 'assets/vendor/aos/aos.css' %} rel="stylesheet">
+  <link href={% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%} rel="stylesheet">
+  <link href={% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%} rel="stylesheet">
+  <link href={% static 'assets/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+  <link href={% static 'assets/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+  <link href={% static 'assets/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={% static 'assets/css/style.css' %} rel="stylesheet">
 </head>
+
 <body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="temps/index.html" class="logo me-auto"><div class="icon"><i class="fas fa-heartbeat"></i>Health Cognizant </div></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)"> -->
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" >
+          <img src={% static 'assets/img/slide/slide-2.jpg' %} alt="">
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src={% static 'assets/img/slide/slide-1.jpg' %} alt="">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src={% static 'assets/img/slide/slide-2.jpg' %} alt="">
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <br>
+    <br>
+      <div class="section-title">
+          <h2>Service</h2>
+      </div>
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+                      <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                          <div class="icon"><i class="fas fa-question-circle"></i></div>
+                          <h4 class="title"><a href="{% url 'questionPage' %}">General QnA</a></h4>
+                          <p class="description">When you're experiencing symptoms but unsure of the cause, our symptom checker can help. </p>
+                        </div>
+                      </div>
+          <!-- <a href="{% url 'vdiabetes' %}"> -->
+            <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                <h4 class="title"><a href="{% url 'vdiabetes' %}">Diabetes</a></h4>
+                <p class="description">Diabetes doesn't define you, but managing it can empower you to live your best life.</p>
+              </div>
+            </div>
+          <!-- </a> -->
+          
+          <!-- <a href="{% url 'vbreastCancer' %}"> -->
+            <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="fas fa-dna"></i></div>
+                <h4 class="title"><a href="{% url 'vbreastCancer' %}">Breast Cancer</a></h4>
+                <p class="description">Breast cancer doesn't discriminate, but early detection can make all the difference.</p>
+              </div>
+            </div>
+          <!-- </a> -->
+
+          <!-- <a href="{% url 'vparkinsons'%}"> -->
+            <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="fas fa-pills"></i></div>
+                <h4 class="title"><a href="{% url 'vparkinsons'%}">Parkinson</a></h4>
+                <p class="description">Parkinson's may shake things up, but with the right treatment and support, you can keep living life to the fullest.</p>
+              </div>
+            </div>
+          <!-- </a> -->
+          
+          <!-- <a href="{% url 'vpneumonia' %}"> -->
+            <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="fas fa-thermometer"></i></div>
+                <h4 class="title"><a href="{% url 'vpneumonia' %}">Pneumonia</a></h4>
+                <p class="description">Don't let pneumonia take your breath away - know the symptoms and seek treatment early.</p>
+              </div>
+            </div>
+          <!-- </a> -->
+
+          <!-- <a href="{% url 'vheartDiseases' %}"> -->
+            <div class="col-md-7 col-lg-4 d-flex align-items-stretch mb-6 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="fas fa-dna"></i></div>
+                <h4 class="title"><a href="{% url 'vheartDiseases' %}">Heart disease</a></h4>
+                <p class="description">Don't skip a beat when it comes to heart health - take action to prevent heart disease.</p>
+              </div>
+            </div>
+          <!-- </a> -->
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
     
-    <a href="temps/index.html" class="logo me-auto"><img src={% static 'assets/img/logo.png' %} alt=""></a>
-      
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Health Cognizant is a web-based application that uses machine learning to predict the likelihood of various diseases based on user-inputted data. Our goal is to provide users with a simple and accessible tool to assess their health risks and take proactive steps towards a healthier lifestyle.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src={% static 'assets/img/about.jpg' %} class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>A new way to keep track of your health, with the power of AI</h3>
+            <p class="fst-italic">
+              Our platform provides a suite of tools to help you monitor your health and predict potential risks for various diseases. We leverage the power of machine learning to provide you with accurate and timely information.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Get predictions for 5 different diseases.</li>
+              <li><i class="bi bi-check-circle"></i> Answer a simple questionnaire to get recommended tests.</li>
+              <li><i class="bi bi-check-circle"></i> Get diet and lifestyle recommendations based on your results.</li>
+            </ul>
+            <p>
+              Our goal is to empower you with the information you need to make informed decisions about your health. We believe that preventative care is the key to a long and healthy life.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
     
-    <h1>Hello This is the home page</h1>
-    <br>
-    <a href="{% url 'vparkinsons' %}">parkinsons</a>
-    <br>
-    <a href="{% url 'vbreastCancer' %}">breastCancer</a>
-    <br>
-    <a href="{% url 'vdiabetes' %}">diabetes</a>
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Departments</h2>
+          <p>Our application covers a wide range of diseases, from common ailments to more serious conditions. We are constantly working to expand our database and improve the accuracy of our predictions. Our goal is to provide a comprehensive health assessment tool that can be used by anyone, anywhere.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>Cardiology</h4>
+                  <p>Our cardiology department is dedicated to the diagnosis and treatment of heart disease.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>Neurology</h4>
+                  <p>Our neurology department focuses on the diagnosis and treatment of disorders of the nervous system.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>Hepatology</h4>
+                  <p>Our hepatology department specializes in the diagnosis and treatment of diseases of the liver.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>Pediatrics</h4>
+                  <p>Our pediatrics department is dedicated to the health and medical care of infants, children, and adolescents.</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>Cardiology</h3>
+                <p class="fst-italic">The cardiology section of our application helps you to predict the risk of heart disease based on various factors such as age, sex, and cholesterol levels.</p>
+                <img src={% static 'assets/img/departments-1.jpg' %} alt="" class="img-fluid">
+                <p>We use a machine learning model trained on a large dataset of heart disease patients to provide you with an accurate prediction. Our model takes into account various factors such as chest pain type, resting blood pressure, and maximum heart rate achieved to provide you with a comprehensive risk assessment.</p>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>Neurology</h3>
+                <p class="fst-italic">The neurology section of our application helps you to predict the risk of Parkinson's disease based on various vocal features.</p>
+                <img src={% static 'assets/img/departments-2.jpg' %} alt="" class="img-fluid">
+                <p>Our model uses a variety of vocal measurements, such as fundamental frequency, jitter, and shimmer, to predict the likelihood of Parkinson's disease. This can help in early detection and management of the disease.</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>Hepatology</h3>
+                <p class="fst-italic">The hepatology section of our application helps you to predict the risk of liver disease based on various factors such as age, gender, and blood test results.</p>
+                <img src={% static 'assets/img/departments-3.jpg' %} alt="" class="img-fluid">
+                <p>Our model uses a variety of blood test results, such as albumin, alkaline phosphatase, and total bilirubin, to predict the likelihood of liver disease. This can help in early detection and management of the disease.</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>Pediatrics</h3>
+                <p class="fst-italic">The pediatrics section of our application helps you to predict the risk of pneumonia in children based on chest X-ray images.</p>
+                <img src={% static 'assets/img/departments-4.jpg' %} alt="" class="img-fluid">
+                <p>Our model uses a deep learning model trained on a large dataset of pediatric chest X-ray images to provide an accurate prediction of pneumonia. This can help in early detection and treatment of the disease in children.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Departments Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>For any inquiries, please contact us at contact@healthcognizant.com</p>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Health Cognizant</h3>
+              <p>
+                123 Health Street <br>
+                Wellness City, 12345<br><br>
+                <strong>Phone:</strong> +1 2345 67890 12<br>
+                <strong>Email:</strong> info@healthcognizant.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">Cardiology</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">Neurology</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">Hepatology</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">Pediatrics</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter to receive the latest updates and health tips.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets/vendor/swiper/swiper-bundle.min.js' %}></script>
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets/js/main.js' %}></script>
+
 </body>
+
 </html>

@@ -1,3 +1,6 @@
+from os import path
+from pathlib import Path
+
 import PIL
 import pickle
 import pandas as pd
@@ -14,7 +17,10 @@ import numpy as np
 import matplotlib.pyplot as pl
 
 def parkinsonsResult(request):
-    model = pickle.load(open('../ml_modules/model.parkinsons', 'rb'))
+    PARKINSONS_MODEL_FILE = (
+            Path(__file__).resolve().parents[2] / "ml_modules" / "model.parkinsons"
+    )
+    model = pickle.load(open(PARKINSONS_MODEL_FILE, 'rb'))
     mdvp_fo_hz = float(request.POST.get('mdvp_fo_hz'))
     mdvp_fhi_hz = float(request.POST.get('mdvp_fhi_hz'))
     mdvp_flo_hz = float(request.POST.get('mdvp_flo_hz'))
@@ -54,9 +60,12 @@ def parkinsonsResult(request):
     return render(request , 'result/parkinsonsResult.html' , {'result' : result})
 
 def diabetesResult(request):
-    model = pickle.load(open('../ml_modules/model.diabetes', 'rb'))
-    result = 'shrut'
+    DIABETES_MODEL_FILE = (
+            Path(__file__).resolve().parents[2] / "ml_modules" / "model.diabetes"
+    )
+    result=None
     if request.method == 'POST':
+        model = pickle.load(open(DIABETES_MODEL_FILE, 'rb'))
         age = (request.POST.get('age'))
         print(type(age))
         gender = request.POST.get('gender')
@@ -96,9 +105,12 @@ def diabetesResult(request):
 
 
 def breastCancerResult(request):
-    model = pickle.load(open('../ml_modules/model.breast_cancer', 'rb'))
-    result = 'shrut'
+    BREAST_CANCER_MODEL_FILE = (
+            Path(__file__).resolve().parents[2] / "ml_modules" / "model.breast_cancer"
+    )
+    result=None
     if request.method == 'POST':
+        model = pickle.load(open(BREAST_CANCER_MODEL_FILE, 'rb'))
         clump_thickness = int(request.POST.get('clump_thickness'))
         uniformity_of_cell_size = int(
             request.POST.get('uniformity_of_cell_size'))
@@ -126,9 +138,12 @@ def breastCancerResult(request):
     return render(request, 'result/breastCancerResult.html', {'result' : result})
 
 def heartDiseasesResult(request):
-    result = 'shrut'
+    HEART_DISEASE_MODEL_FILE = (
+            Path(__file__).resolve().parents[2] / "ml_modules" / "model.heart_disease_new"
+    )
+    result=None
     if request.method == 'POST':
-        model = pickle.load(open('../ml_modules/model.heart_disease_new', 'rb'))
+        model = pickle.load(open(HEART_DISEASE_MODEL_FILE, 'rb'))
         age=float(request.POST.get('age'))
         sex=(request.POST.get('sex'))
         chest_pain_type = float(request.POST.get('chest_pain_type'))
@@ -161,13 +176,17 @@ def heartDiseasesResult(request):
 def pneumoniaResult(request):
     from PIL import Image
     # model = load_model("D:/Intellify/pneumonia_detection_ai_version_3.h5")
-    model = load_model("../ml_modules/pneumonia_detection_ai_version_3.h5")
+    PNEUMONIA_MODEL_FILE = (
+            Path(__file__).resolve().parents[2] / "ml_modules" / "pneumonia_detection_ai_version_3.h5"
+    )
+
+    model = load_model(PNEUMONIA_MODEL_FILE)
     # dimensions of our images
     img_width, img_height = 200, 200
 
     # load the model we saved
     # model = pickle.load(open('../ml_modules/model.pneumonia', 'rb'))
-    result = 'shrut'    
+    result=None
     if request.method == 'POST':
         # creating a image object (main image)
         im1 = Image.open(request.FILES.get('image'))
