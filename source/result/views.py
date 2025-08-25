@@ -67,6 +67,8 @@ def diabetesResult(request):
     if request.method == 'POST':
         model = pickle.load(open(DIABETES_MODEL_FILE, 'rb'))
         age = (request.POST.get('age'))
+        if age == '':
+            age = 0
         print(type(age))
         gender = request.POST.get('gender')
         # print(type(gender))

@@ -90,7 +90,9 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DB_PATH = os.getenv("DJANGO_SQLITE_PATH", "/data/db.sqlite3")
+DEFAULT_DB = BASE_DIR / "db.sqlite3"   # works locally and on PA
+DB_PATH = os.environ.get("DJANGO_SQLITE_PATH", str(DEFAULT_DB))
+
 
 DATABASES = {
     "default": {
