@@ -9,6 +9,7 @@ lightgbm==4.6.0
 Pillow==11.3.0
 tensorflow==2.15.0
 joblib==1.2.0
-opencv-python== 4.9.0.80
+opencv-python-headless==4.9.0.80
 gunicorn
 whitenoise
+dj-database-url
