@@ -59,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -84,14 +85,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "main.wsgi.application"
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DB_PATH = os.getenv("DJANGO_SQLITE_PATH", "/data/db.sqlite3")
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DB_PATH
     }
 }
 
